@@ -1,0 +1,57 @@
+
+/*------------------------------------*\
+    $FOOTER
+\*------------------------------------*/
+
+footer {
+  clear:both;
+  overflow:hidden; /*clearfix*/
+  position:relative;
+  ul {
+    display: inline-block;
+    vertical-align:top;
+
+    @include media-query(palm) {
+      padding: 20px 30px;
+    }
+
+  }
+
+  a {
+    color:#fff;
+    padding: 5px 0;
+    display: inline-block;
+  }
+
+  .heading {
+    padding-bottom: 20px;
+  }
+
+  .list-group {
+    background: #434a54;
+    padding: 30px 30px 30px 240px;
+
+    @include media-query(palm) {
+      padding: 10px;
+    }
+  }
+
+  .company-info {
+    background: #393f48;
+    padding: 30px;
+    position:absolute;
+    top:0;
+    bottom:0;
+    height: auto;
+    font-size: 12px;
+    font-weight: 200;
+
+    @include media-query(palm) {
+      display: none;
+    }
+
+    h3 {
+      margin-bottom: 20px;
+    }
+  }
+}

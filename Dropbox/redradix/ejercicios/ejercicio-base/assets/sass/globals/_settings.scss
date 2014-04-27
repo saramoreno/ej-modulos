@@ -1,0 +1,78 @@
+
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+
+// -------------------------------------
+//   Colors
+// -------------------------------------
+
+
+$baseBg: #f0f2f5;
+$text: #99a3b1;
+// $textDark
+// $textLight
+
+$primary: green;
+// $primaryDark
+// $primaryMedium
+// $primaryLight
+
+$secondary: #ed5565;
+// $secondaryDark: #262b3b;
+// $secondaryLight: #4b5060;
+
+// $error: #b71217;
+// $success
+
+
+// -------------------------------------
+//   Fonts
+// -------------------------------------
+
+$font: Arial, Helvetica, sans-serif;
+$fontSecondary: 'Economica', Arial, Helvetica, sans-serif;
+$base-lineHeight: normal;
+
+$font-base: 14;
+$document-font-size: ($font-base / 16) * 100%;
+
+// Extended font sizes
+
+// $font_size_zeta         : 14;     // h6
+$font_size_epsilon      : 16;     // h5
+$font_size_delta        : 18;     // h4
+$font_size_gamma        : 20;     // h3
+$font_size_beta         : 24;     // h2
+$font_size_alpha        : 28;     // h1
+
+// $font_size_kilo         : 30;     // extra-large
+// $font_size_mega         : 38;     // extra-Xlarge
+// $font_size_giga         : 46;     // jumbotronik
+
+
+
+// -------------------------------------
+//   Layout
+// -------------------------------------
+
+//$l-maxWidth: em(1200px);
+$l-maxWidth: 975px;
+
+$base-whitespace: 20px;
+
+// -------------------------------------
+//   Breakpoints
+// -------------------------------------
+
+// palm: for handheld devices
+// lap: for tablets and netbooks and the like
+// portable: for both of the above
+// desk: for anything big enough to be deemed stationary
+
+$lap-start: 700;
+$desk-start: 970;
+//$desk-wide-start: 1200px;
+
+$palm-end: $lap-start - 1;
+$lap-end:  $desk-start - 1;

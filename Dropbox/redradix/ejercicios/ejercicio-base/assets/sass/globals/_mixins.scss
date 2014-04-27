@@ -1,0 +1,283 @@
+/*------------------------------------*\
+    $HELPERS
+    -> Extends, Functions, Mixins, Animations
+\*------------------------------------*/
+
+// -------------------------------------
+//   Functions
+// -------------------------------------
+
+// ----- em ----- //
+
+@function em($target, $context: $font-base){
+  @if ($target == 0){
+    @return 0;
+  }
+  @else{
+    @return #{$target / $context}em;
+  }
+}
+
+// ----- rem ----- //
+
+@function rem($size){
+  @return #{$size / $font-base}rem;
+}
+
+
+
+// -------------------------------------
+//   font-face
+// -------------------------------------
+
+  @mixin font-face($font-family, $font-filename, $font-weight : normal, $font-style :normal, $font-stretch : normal) {
+    @font-face {
+      font-family: '#{$font-family}';
+      src: url('../../fonts/#{$font-filename}.otf'); /* IE9 Compat Modes */
+      src: url('../../fonts/#{$font-filename}.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+      url('../../fonts/#{$font-filename}.woff') format('woff'), /* Modern Browsers */
+      url('../../fonts/#{$font-filename}.ttf') format('truetype'), /* Safari, Android, iOS */
+      url('../../fonts/#{$font-filename}.svg##{$font-family}') format('svg'); /* Legacy iOS */
+      font-weight: $font-weight;
+      font-style: $font-style;
+      font-stretch: $font-stretch;
+    }
+  }
+
+// Usage:
+// @include font-face('Gotham', 'GothaHTFLig', 200);
+
+
+// -------------------------------------
+//   font-size
+// -------------------------------------
+
+  @mixin font-size($sizeValue: 12 ) {
+        font-size: $sizeValue + px;
+       font-size: ($sizeValue / $font-base) + rem;
+  }
+
+
+// -------------------------------------
+//   prefixer
+// -------------------------------------
+
+  @mixin prefixer ($property, $value:null,
+                 $webkit: true,
+                    $moz: true,
+                     $ms: true,
+                      $o: true,
+                   $spec: true) {
+  @if $value{
+    @if $webkit { -webkit-#{$property}: $value; }
+    @if $moz    {    -moz-#{$property}: $value; }
+    @if $ms     {     -ms-#{$property}: $value; }
+    @if $o      {      -o-#{$property}: $value; }
+    @if $spec   {         #{$property}: $value; }
+  }
+}
+
+
+
+// -------------------------------------
+//   box-sizing
+// -------------------------------------
+
+  @mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model;  // Safari <= 5
+       -moz-box-sizing: $box-model;  // Firefox <= 19
+            box-sizing: $box-model;
+  }
+
+//Border radius
+  @mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+  }
+
+//Box Shadow
+  @mixin box-shadow($shadow...) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+  }
+
+//Text Shadow
+  @mixin text-shadow($shadow...) {
+    -webkit-text-shadow: $shadow;
+    -moz-text-shadow: $shadow;
+    text-shadow: $shadow;
+  }
+
+//Opacity
+  @mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+  }
+
+
+
+
+// -------------------------------------
+//   clearfix
+// -------------------------------------
+
+  @mixin clearfix(){
+    &:after{
+      clear: both;
+      content: '';
+      display: table;
+    }
+  }
+
+
+
+//*****************************************
+// ACCESIBLE & SEO-FRIENDLY HIDDEN CONTENT
+//*****************************************
+
+// ------------------------------------------
+//   Accesible & seo-friendly hidden content
+// ------------------------------------------
+
+  @mixin hide-content {
+    display: table;
+    text-indent:100%;
+    white-space:nowrap;
+    overflow: hidden;
+  }
+
+
+// -------------------------------------
+//   vertical-align
+// -------------------------------------
+
+  @mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+
+// -------------------------------------
+//   inline-block
+// -------------------------------------
+
+  @mixin inline-block() {
+    display: inline-block;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+  }
+
+
+// -------------------------------------
+//   rgba
+// -------------------------------------
+
+  @mixin background-opacity($color, $opacity: 0.3) {
+      background: $color; /* fallback */
+      background: rgba($color, $opacity);
+  }
+
+
+// -------------------------------------
+//   SVG
+// -------------------------------------
+
+// The SVG mixin creates a placeholder and a class with the supplied $name.
+// The placeholder expects images to be under images/icons/svg and images/icons/png
+// The last two arguments are optional
+// @include svg($name, $file_name, $width, $height);
+
+@mixin svg($name, $file_name, $w:null, $h:null){
+    %ico-#{$name}{
+      background-image: image_url("icons/svg/#{$file_name}.svg");
+    .no-svg &{
+      background-image: image_url("icons/png/#{$file_name}.png");
+    }
+}
+
+  .ico-#{$name} {
+    @extend %ico-#{$name};
+    background-repeat:no-repeat;
+    @if $w{ width:$w; }
+    @if $h{ height:$h; }
+  }
+}
+
+
+// -------------------------------------
+//   Media query
+// -------------------------------------
+
+//**
+// * Media query mixin. - inuitcss.com -- @inuitcss -- @csswizardry
+// *
+// * It’s not great practice to define solid breakpoints up-front, preferring to
+// * modify your design when it needs it, rather than assuming you’ll want a
+// * change at ‘mobile’. However, as inuit.css is required to take a hands off
+// * approach to design decisions, this is the closest we can get to baked-in
+// * responsiveness. It’s flexible enough to allow you to set your own breakpoints
+// * but solid enough to be frameworkified.
+// *
+// * We define some broad breakpoints in our vars file that are picked up here
+// * for use in a simple media query mixin. Our options are:
+// *
+// * palm
+// * lap
+// * lap-and-up
+// * portable
+// * desk
+// * desk-wide
+// *
+// * Not using a media query will, naturally, serve styles to all devices.
+// *
+// * `@include media-query(palm){ [styles here] }`
+// *
+// * We work out your end points for you:
+// */
+
+@mixin media-query($media-query){
+
+    @if $media-query == palm{
+
+        @media only screen and ( max-width: em($palm-end) ) { @content; }
+
+    }
+
+    @if $media-query == lap{
+
+        @media only screen and (min-width: em($lap-start) ) and (max-width: em($lap-end)) { @content; }
+
+    }
+
+    @if $media-query == lap-and-up{
+
+        @media only screen and (min-width: em($lap-start)) { @content; }
+
+    }
+
+    @if $media-query == portable{
+
+        @media only screen and (max-width: em($lap-end)) { @content; }
+
+    }
+
+    @if $media-query == desk{
+
+        @media only screen and (min-width: em($desk-start) ) { @content; }
+
+    }
+
+    @if $media-query == desk-wide{
+
+        @media only screen and (min-width: em($desk-wide-start) ) { @content; }
+
+    }
+
+}

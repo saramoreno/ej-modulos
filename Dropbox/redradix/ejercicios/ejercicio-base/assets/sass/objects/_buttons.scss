@@ -1,0 +1,144 @@
+
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+
+.btn {
+  background: #ed5565;
+  color: #fff;
+  border: none;
+  border-bottom: 3px solid #da4453;
+  @include border-radius(4px);
+  @include box-shadow(1px 1px 1px #ccc);
+  margin-top: 10px;
+  overflow:hidden; /*clearfix*/
+
+  &:focus {
+     outline: none;
+   }
+  }
+
+.btn-normal {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.btn-xl {
+  width: 130px;
+  cursor:pointer;
+}
+
+.send {
+  text-align: center;
+}
+
+.btn-group {
+  margin-bottom: 40px;
+
+  @include media-query (palm) {
+    float:none;
+    margin: 30px auto;
+    width: 85%;
+    text-align: center;
+  }
+
+  .arrow-l {
+    border-right: 1px solid #f0f2f5;
+
+  }
+
+  .arrow-r {
+   border-left: 1px solid #f0f2f5;
+   border-right: none;
+  }
+
+  ol {
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0;
+    border-right: 1px solid #da4453;
+    padding: 15px;
+
+    @include media-query (palm) {
+      padding: 14px;
+    }
+
+    &:hover {
+      background: #da4453;
+      opacity:1;
+      }
+    }
+  }
+
+.social-btn {
+  text-align: center;
+
+  .facebook {
+    width: 80%;
+    background: #5d9cec;
+    border: none;
+    padding: 15px 0;
+
+    @include media-query(lap) {
+      width: 100%;
+    }
+  }
+
+
+  .twitter {
+    width: 80%;
+    background: #4fc0e8;
+    border: none;
+    padding: 15px 0;
+
+    @include media-query(lap) {
+      width: 100%;
+    }
+  }
+
+  .google {
+    width: 80%;
+    border: none;
+    padding: 15px 0;
+
+    @include media-query(lap) {
+      width: 100%;
+    }
+  }
+
+  .icon {
+    padding-right: 10px;
+  }
+ }
+
+.secondary-btn {
+  background-color: #fff;
+  color: $secondary;
+  padding: 15px 20px;
+  @include border-radius(4px);
+  float: right;
+  font-weight: bold;
+
+  @include media-query(palm) {
+    margin-top: 20px;
+  }
+}
+
+.banner {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px;
+  margin: 20px 0;
+
+  @include media-query(palm) {
+    text-align: center;
+  }
+
+  .four-fifths, .one-fifth {
+    vertical-align: middle;
+
+  }
+}

@@ -1,0 +1,78 @@
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+
+
+/* Tipos */
+@include font-face($fontSecondary, "Economica-Bold-OTF");
+
+/* Global */
+
+html{
+  font-size: $document-font-size;
+}
+
+body{
+  background: $baseBg;
+  color: $text;
+  font-family: $font;
+  font-size: 100%;
+  line-height: $base-lineHeight;
+}
+
+
+/* Block Content */
+
+h2 {
+color: $secondary;
+}
+
+h1,h2,h2,h3,h4,h6{
+  font-size: 1em;
+  font-weight: bold;
+  font-family: $fontSecondary;
+}
+
+p{
+  line-height: 1.3;
+}
+
+/* Inline Content */
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+p a{
+  color: $primary;
+}
+
+//text align
+.centered {
+  text-align: center;
+}
+.left-align {
+  text-align: left;
+}
+.right-align {
+  text-align: right;
+}
+
+//floats
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.center {
+  margin: 0 auto;
+}
+.no-float {
+  float: none;
+}
+
+.inline-content{
+  display: inline-block;
+}

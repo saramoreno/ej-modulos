@@ -1,0 +1,59 @@
+/*------------------------------------*\
+    $MODULE-REGISTER-BOX
+\*------------------------------------*/
+
+.register-form {
+
+  label {
+    display: block;
+    color: #768082;
+    font-size: 13px;
+    padding: 10px 0 5px 0;
+  }
+
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .checkbox {
+    margin-top: 10px;
+  }
+
+  input[type="checkbox"] {
+    width: 10%;
+    height: 20px;
+  }
+
+  .birth {
+    width: 100%;
+
+    input[type="text"] {
+      width: 32.3%;
+    }
+  }
+
+  select {
+    background: #fff;
+    -webkit-appearance: none;
+    color: #99a3b1;
+  }
+}
+
+.login-left {
+  border-right: 1px solid #e3e4e8;
+  padding: 0 20px;
+
+  @include media-query(palm) {
+    border:none;
+  }
+}
+
+.login-right {
+  padding: 0 20px;
+
+  @include media-query(palm) {
+    border:none;
+    margin-top: 40px;
+  }
+}

@@ -1,0 +1,95 @@
+
+/*------------------------------------*\
+    $NORMALIZE
+\*------------------------------------*/
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+    display: block;
+}
+
+*, *:after, *:before{
+  @include box-sizing(border-box);
+}
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; 
+}
+
+body{
+  margin: 0;
+  //-webkit-tap-highlight-color: $primary;
+}
+
+a{
+  background: transparent;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+h1,h2,h2,h3,h4,h6{
+  margin: 0;
+}
+
+b,
+strong {
+    //font-family: $fontHeavy;
+    //font-weight: normal;
+}
+
+p{
+    margin: 0;
+}
+
+::selection{
+  background: $primary;
+  color: #FFF;
+}
+::-moz-selection{
+  background: $primary;
+  color: #FFF;
+}
+
+ul, ol, dl, dd{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: 0; 
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+iframe{
+  max-width: 100%;
+}
+
+figure {
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}

@@ -1,0 +1,54 @@
+
+/*------------------------------------*\
+    $HEADER
+\*------------------------------------*/
+.main-header {
+  position: relative;
+
+  .panel {
+    padding: 10px 20px 10px 0;
+    margin-top: 50px;
+
+    @include media-query (palm) {
+      padding: 10px;
+    }
+      form {
+        position: absolute;
+        top: 8px;
+        right: 70px;
+
+        @include media-query (palm) {
+          position: static;
+        }
+      }
+  }
+
+  li {
+    line-height: 45px;
+
+    @include media-query (palm) {
+      display: block;
+    }
+
+    a {
+      padding: 30px;
+      border-right: 1px solid #e3e4e8;
+      display:inline;
+
+      @include media-query (palm) {
+        border-right: none;
+        padding: 10px;
+        display: block;
+      }
+
+      @include media-query (lap) {
+        padding: 20px;
+      }
+
+      &:hover {
+        background: #ed5565;
+        color: #fff;
+      }
+    }
+  }
+}

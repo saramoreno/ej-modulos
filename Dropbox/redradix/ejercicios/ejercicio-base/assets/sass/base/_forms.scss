@@ -1,0 +1,80 @@
+/*------------------------------------*\
+    $FORMS
+\*------------------------------------*/
+
+form {
+  margin: 0;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+button,
+input,
+textarea{
+  @include border-radius(0);
+}
+
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+}
+
+/*------------------------------------*\
+    $SPECIFIC FORMS
+\*------------------------------------*/
+
+.basic-form {
+  @include border-radius(6px);
+  padding: 10px;
+  border: 2px solid #e3e4e8;
+  font-size:12px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+header {
+  .basic-form {
+    width: 100%;
+    background: #f0f2f5;
+    border-top: 1px solid #ccced0;
+    font-size:12px;
+    list-style: italic;
+    margin-left: 55px;
+
+    @include media-query(palm) {
+      margin-left: 0;
+    }
+  }
+
+}
+
+select {
+  height: 37px;
+  background-color:#fff;
+
+  &:after {
+    content:"";
+    background: #ccc;
+  }
+}

@@ -1,0 +1,215 @@
+!!! 5
+%html
+  %head
+    %meta{:charset => "utf-8"}
+
+    %meta{:content => "width=device-width", :name => "viewport"}
+
+    %title Redradix
+
+    /[if lt IE 9]
+      %script{:src=>"assets/javascripts/dependencies/html5shiv.js"}
+
+    %link{:href=> "assets/stylesheets/screen.css", :rel=> 'stylesheet'}
+
+  %body
+    .wrapper
+      %header.main-header
+        %nav
+          %ul.panel.epsilon
+            %li.inline-content>
+              %a{:href=>"#"}Flatic
+            %li.inline-content>
+              %a{:href=>"#"}Home
+            %li.inline-content>
+              %a{:href=>"#"}About
+            %li.inline-content>
+              %a{:href=>"#"}Services
+            %li.inline-content>
+              %a{:href=>"#"}Portfolio
+            %li.inline-content>
+              %a{:href=>"#"}Contact
+            %li.inline-content
+              %form
+                %input.basic-form{:type=>"text", :placeholder=>"Search for something :)"}
+
+      .main-content
+        .panel.forty-width.mr.inline-content>
+          %h2 Register Now
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, soluta nihil placeat quas delectus
+          %form.register-form
+            %label Username
+            %input.basic-form{:type => "text", :placeholder=>"M-Elgendy"}/
+            %label Password
+            %input.basic-form{:type => "password"}/
+            %label Re-Password
+            %input.basic-form{:type => "password"}/
+            .birth
+              %label Date of birth
+              %select.basic-form.onethird-width.mr>
+                %option{:value => "value 1"} Month
+                %option{:value => "value 2"} January
+                %option{:value => "value 3"} February
+              %input.basic-form.mr.onethird-width{:type => "text", :placeholder=>"Day"}>
+              %input.basic-form.onethird-width{:type => "text", :placeholder=>"Year"}>
+              %label Country
+              %select.basic-form.one-whole>
+                %option{:value => "value 1"} Spain
+                %option{:value => "value 2"} France
+                %option{:value => "value 3"} Germany
+              .checkbox
+                %input{:type => "checkbox"} Send me daily newsletter
+              .send
+                %button.btn.btn-normal.btn-xl{:type=>"button"} REGISTER
+        .panel.sixty-width.ml.inline-content>
+          .login-left.one-half.left
+            %h2 Log In
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, soluta nihil placeat quas delectus
+            %form.register-form
+              %label Username
+              %input.basic-form{:type => "text", :placeholder=>"M-Elgendy"}/
+              %label Password
+              %input.basic-form{:type => "password"}/
+              .check
+                %input{:type => "checkbox"}Remember password
+              .send
+                %button.btn.btn-normal.btn-xl{:type=>"button"} LOGIN
+          .login-right.one-half.left
+            %h2 Login by another ways
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, soluta nihil placeat quas delectus
+            .social-btn
+              %button.btn.facebook{:type=>"button"}
+                Login with Facebook
+                .icon.icon-heart.right
+              %button.btn.twitter{:type=>"button"}
+                Login with Twitter
+                .icon.icon-star.right
+              %button.btn.google{:type=>"button"}
+                Login with Google +
+                .icon.icon-bucket.right
+        .icon-panel.inline-content.onethird-width.mr>
+          .top-panel
+            %h2 Icon List
+          .bottom-panel
+            %ul
+              %li
+                %img{:src => "assets/images/icon-movie.png", :alt => ""}/
+                Watching to new movie
+              %li
+                %img{:src => "assets/images/icon-music.png", :alt => ""}/
+                Listening to music
+              %li
+                %img{:src => "assets/images/icon-game.png", :alt => ""}/
+                Play new game
+              %li
+                %img{:src => "assets/images/icon-man.png", :alt => ""}/
+                Learn how to design
+              %li
+                %img{:src => "assets/images/icon-circlesimple.png", :alt => ""}/
+                Learn how to design
+              %li
+                %img{:src => "assets/images/icon-circle.png", :alt => ""}/
+                Learn how to design
+        .post-panel.inline-content.onethird-width.mr>
+          .top-panel
+            %h2 Latest Posts
+          .bottom-panel
+            %ul
+              %li.first
+                %img{:src => "assets/images/img1.jpeg", :alt => ""}/
+                .text
+                  %h5 Duis sapien turpis nec.
+                  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, magnam...
+              %li
+                %img{:src => "assets/images/img2.jpeg", :alt => ""}/
+                .text
+                  %h5 Duis sapien turpis nec.
+                  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, magnam...
+              %li
+                %img{:src => "assets/images/img3.jpeg", :alt => ""}/
+                .text
+                  %h5 Duis sapien turpis nec.
+                  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, magnam...
+        .post-panel.inline-content.one-third>
+          .top-panel
+            %h2 Latest Posts
+          .bottom-panel
+            %ul
+              %li.first
+                %img{:src => "assets/images/img1.jpeg", :alt => ""}/
+                .text
+                  %h5 Duis sapien turpis nec.
+                  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, magnam...
+              %li
+                %img{:src => "assets/images/img2.jpeg", :alt => ""}/
+                .text
+                  %h5 Duis sapien turpis nec.
+                  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, magnam...
+              %li
+                %img{:src => "assets/images/img3.jpeg", :alt => ""}/
+                .text
+                  %h5 Duis sapien turpis nec.
+                  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, magnam...
+        %article.banner.btn
+          .four-fifths.inline-content>
+            %p
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, commodi
+          .one-fifth.inline-content>
+            %a.secondary-btn.inline-content{:href => "#"}SHOW MORE
+      %footer
+        .company-info.one-fifth.left>
+          %h3
+            %a{:href => "#"} Flatic
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, incidunt, quam, ea quas repellendus ducimus recusandae dignissimos possimus dolor
+
+        .list-group.one-whole>
+          %ul.one-quarter<
+            %li.heading About Us
+            %li
+              %a{:href => "#"} Dashboard
+            %li
+              %a{:href => "#"} Feed
+            %li
+              %a{:href => "#"} Forums
+            %li
+              %a{:href => "#"} Journal
+            %li
+              %a{:href => "#"} Store
+            %li
+              %a{:href => "#"} Dashboard
+          %ul.one-quarter>
+            %li.heading Categories
+            %li
+              %a{:href => "#"} Web Designs
+            %li
+              %a{:href => "#"} Photography
+            %li
+              %a{:href => "#"} Digital Art
+            %li
+              %a{:href => "#"} Vector Art
+            %li
+              %a{:href => "#"} Tutorials
+          %ul.one-quarter>
+            %li.heading Networks
+            %li
+              %a{:href => "#"} Other Sites
+            %li
+              %a{:href => "#"} Insight
+            %li
+              %a{:href => "#"} Planning
+            %li
+              %a{:href => "#"} Production
+            %li
+              %a{:href => "#"} Store
+          %ul.one-quarter>
+            %li.heading Follow us
+            %li
+              %a{:href => "#"} Facebook
+            %li
+              %a{:href => "#"} Twitter
+            %li
+              %a{:href => "#"} Linkedin
+            %li
+              %a{:href => "#"} Rss Feed
+            %li
+              %a{:href => "#"} Youtube
